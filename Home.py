@@ -3,9 +3,6 @@ import pandas
 
 st.set_page_config(layout="wide")
 
-
-
-
 st.title("The Best Company")
 description = """
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
@@ -15,14 +12,9 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 st.write(description)
 st.subheader("Our team")
 
-st.sidebar.title("Welcome")
-page = st.sidebar.selectbox(" ", ["Home", "Contact Us"])
-
-
-
 col1, col2, col3 = st.columns(3)
 
-df = pandas. read_csv("datas.csv", sep=',')
+df = pandas.read_csv("datas.csv", sep=',')
 df["Full Name"] = (df["first name"] + ' ' + df["last name"]).str.title()
 with col1:
     for index, row in df[:4].iterrows():
